@@ -1,12 +1,10 @@
 {
-	"name": "graphql-plaything",
-	"dependencies": {
-		"express": "^4.15.3",
-		"express-graphql": "^0.6.6",
-		"graphql": "^0.10.1",
-		"graphql-tools": "^1.1.0",
-		"react": "^15.6.1",
-		"redux": "^3.7.1"
-	},
-	"main": "index.js"
+  "name": "todo-graphql",
+  "dependencies": {
+    "express": "^4.15.3",
+    "express-graphql": "^0.6.6",
+    "graphql": "^0.10.1",
+    "graphql-tools": "^1.1.0"
+  },
+  "main": "index.js"
 }
