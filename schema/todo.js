@@ -5,7 +5,10 @@ const uniqueId = require("../utils/unique-id.js");
 const todos = sampleData.todos;
 const todosList = sampleData.todosList;
 
-const mutations = `createTodo(title: String!, description: String): Todo`;
+const mutations = `
+  createTodo(title: String!): Todo
+  editTodo(id: ID!, done:Boolean, title:String): Todo
+`;
 
 const queries = `
   todo(id: ID!): Todo
@@ -14,8 +17,7 @@ const queries = `
 const types = `type Todo {
   id: ID
   title: String
-  description: String
-  status: Boolean
+  done: Boolean
 }`;
 
 const resolvers = {
@@ -27,17 +29,20 @@ const resolvers = {
     }
   },
   [MUTATION]: {
-    createTodo: (obj, { title, description }, context) => {
+    createTodo: (obj, { done, title }, context) => {
       const id = uniqueId();
       todos[id] = {
-        description,
         id,
         userId: "739955945098.7233",
-        status: false,
+        done: false,
         title
       };
       todosList.push(id);
       return todos[id];
+    },
+    editTodo: (obj, options, context) => {
+      todos[options.id] = Object.assign(todos[options.id], options);
+      return todos[options.id];
     }
   }
 }

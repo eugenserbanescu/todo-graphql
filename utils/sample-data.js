@@ -16,22 +16,19 @@ module.exports = {
     '254518566664.23285': {
       id: '254518566664.23285',
       title: 'Add todos to schema',
-      description: 'Todos need to be added to the schema so we can query them later',
-      status: true,
+      done: true,
       userId: '739955945098.7233'
     },
     '1031377979903.1761': {
       id: '1031377979903.1761',
       title: 'Add todos to sample data',
-      description: 'We need some sample todos just to see how the thing behaves',
-      status: true,
+      done: false,
       userId: '739955945098.7233'
     },
     '942435525086.876': {
       id: '942435525086.876',
       title: 'More stuff needs to be done',
-      description: 'Moar stuffs',
-      status: false,
+      done: false,
       userId: '739955945098.7234'
     }
   },
